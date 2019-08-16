@@ -332,6 +332,7 @@ def make_permute(feature, reuse_len, seq_len, perm_size, num_predict):
 
     inputs = torch.LongTensor(feature.pop("input"))
     target = torch.LongTensor(feature.pop("target"))
+    print("test: {}".format(type(feature["is_masked"])))
     is_masked = torch.ByteTensor(feature.pop("is_masked"))
 
     non_reuse_len = seq_len - reuse_len

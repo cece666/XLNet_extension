@@ -66,7 +66,7 @@ if __name__ == "__main__":
                         reuse_len=args.reuse_len, mem_len=args.mem_len)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.01)
+    optimizer = optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.01)
 
     for num_epoch in range(args.num_epoch):
         mems = None

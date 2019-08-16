@@ -116,3 +116,4 @@ if __name__ == "__main__":
             optimizer.step()
 
             mems = new_mems
+    return model

@@ -53,7 +53,7 @@ if __name__ == "__main__":
     parser.add_argument('--mem_len', type=int,
                         default=384, help="Number of steps to cache")
     parser.add_argument('--num_epoch', type=int,
-                        default=100, help="Number of epochs")
+                        default=1, help="Number of epochs")
 
     args = parser.parse_args()
 

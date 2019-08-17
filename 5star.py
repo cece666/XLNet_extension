@@ -116,4 +116,13 @@ if __name__ == "__main__":
             optimizer.step()
 
             mems = new_mems
-    return model
+            
+    xlnet_out_address='data'
+    if not os.path.exists(xlnet_out_address):
+        os.makedirs(xlnet_out_address)
+    model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
+    output_model_file = os.path.join(xlnet_out_address, "pytorch_model.bin")
+    output_config_file = os.path.join(xlnet_out_address, "config.json")
+    torch.save(model_to_save.state_dict(), output_model_file)
+    model_to_save.config.to_json_file(output_config_file)
+    tokenizer.save_vocabulary(xlnet_out_address)

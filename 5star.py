@@ -116,4 +116,4 @@ if __name__ == "__main__":
             optimizer.step()
 
             mems = new_mems
-    model.save('5star.h5')
+    return model
